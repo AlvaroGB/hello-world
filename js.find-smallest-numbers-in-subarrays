@@ -1,0 +1,22 @@
+var matrix123 = [[1,3,4],[5,2,6],[1,4,-7]];
+
+function getSmallestNos(matrix){
+  var results = [];
+  for (array = 0; array < matrix.length; array++){
+    console.log("START ARRAY #" + array);
+    var smallestNo = matrix[array][0];
+    for (unit = 1; unit < matrix[array].length; unit++){
+      console.log("GRABBING: " + matrix[array][unit]);
+      if (matrix[array][unit] < smallestNo){
+        smallestNo = matrix[array][unit];
+      }
+    }
+    console.log("FINISHED ARRAY #" + array + ". SMALLEST NO IS " + smallestNo);
+    console.log("MOVING ONTO NEXT ARRAY IF REQUIRED");
+    results[array] = smallestNo;
+  }
+  console.log("PRINTING RESULTS");
+  return results;
+}
+
+getSmallestNos(matrix123);

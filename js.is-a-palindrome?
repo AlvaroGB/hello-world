@@ -1,0 +1,21 @@
+function palindrome(word){
+  console.log("START");
+  var cleanWord = word.replace(/[^A-Z|0-9]/gi, "");
+  console.log("CLEAN: " + cleanWord);
+  var lowerCleanWord = cleanWord.toLowerCase();
+  console.log("LOWER: " + lowerCleanWord);
+  var wordArray = lowerCleanWord.split("");
+  console.log("ARRAY:" + wordArray);
+  var reversedArray = wordArray.reverse();
+  console.log("REVERSED: " + reversedArray);
+  var reversedWord = reversedArray.join("");
+  console.log("JOINED: " + reversedWord);
+  console.log("COMPARE: " + reversedWord + " vs. " + lowerCleanWord);
+  if (reversedWord === lowerCleanWord) {
+    console.log("TRUE! " + word + " is a palindrome!!");
+    return true;} else {
+      console.log("FALSE! " + word + " is not a palindrome...");
+      return false;}
+}
+
+palindrome("1 eye for of 1 eye.");

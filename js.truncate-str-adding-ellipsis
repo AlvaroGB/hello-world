@@ -1,0 +1,24 @@
+/*
+Truncate str string and slice by num index, adding "..." to reflect the truncation.
+Exceptions to "...": num <= 3, str is not truncated.
+*/
+
+function truncateString(str, num) {
+  console.log("PARAMETER ORIGINAL: " + str);
+  console.log("PARAMETER MAX. CHARS: " + num);
+  
+  if (num >= str.length) {return str;} else {
+  var slicedStr = str.slice(0, (num > 3) ? num - 3 : num);
+  console.log("PROCESS SLICED: " + slicedStr);
+  var finalStr = slicedStr + "...";
+  console.log("PROCESS FINAL: " + finalStr);
+  return finalStr;
+    }
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 11);
+truncateString("Peter Piper picked a peck of pickled peppers", 14);
+truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
+truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2);
+truncateString("A-", 1);
+truncateString("Absolutely Longer", 2);

@@ -1,6 +1,6 @@
 function palindrome(word){
   console.log("START");
-  var cleanWord = word.replace(/[^A-Z|0-9]/gi, "");
+  var cleanWord = word.replace(/[^A-Z0-9]/gi, "");
   console.log("CLEAN: " + cleanWord);
   var lowerCleanWord = cleanWord.toLowerCase();
   console.log("LOWER: " + lowerCleanWord);

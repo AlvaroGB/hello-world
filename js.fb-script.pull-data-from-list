@@ -20,7 +20,6 @@ rows.forEach(function(rowArray){
 
 //Creates link to download csv with customised name.
     var link = document.createElement("a");
-link.setAttribute("id", "10-top-games.csv-download-link")
 link.setAttribute("href", encodedUri);
 link.setAttribute("download", "gameplan_items.csv");
 document.body.appendChild(link);
@@ -29,4 +28,4 @@ link.click();
 		return list;
 }
 
-document.getElementById("10-top-games.csv-download-link").onclick = dataOctopus();
+document.getElementById("logo").onclick = dataOctopus();

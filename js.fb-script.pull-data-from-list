@@ -1,0 +1,32 @@
+function dataOctopus() {
+
+//Pulls data and constructs an array with desired values.
+		var list = [];
+	  var title = document.getElementById("top-games").getElementsByClassName("game-name left");
+    var players = document.getElementById("top-games").querySelectorAll(".num:not(.period-col)");
+      for (var i=0; i<title.length && i<players.length; i++)
+      list[i] = [title[i].innerText, players[i].innerHTML];
+
+//Creates a csv by iterating through list variable.
+	let rows = [];
+		for (var i=0; i<list.length; i++)
+			rows.push(list[i]);
+	let csvContent = "data:text/csv;charset=utf-8,";
+rows.forEach(function(rowArray){
+   let row = rowArray.join(";");
+   csvContent += row + "\r\n";
+});
+    var encodedUri = encodeURI(csvContent);
+
+//Creates link to download csv with customised name.
+    var link = document.createElement("a");
+link.setAttribute("id", "10-top-games.csv-download-link")
+link.setAttribute("href", encodedUri);
+link.setAttribute("download", "gameplan_items.csv");
+document.body.appendChild(link);
+link.click();
+
+		return list;
+}
+
+document.getElementById("10-top-games.csv-download-link").onclick = dataOctopus();

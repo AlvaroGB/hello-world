@@ -1,16 +1,17 @@
 function dataOctopus() {
 
 //Pulls data and constructs an array with desired values.
-		var list = [];
-	  var title = document.getElementById("top-games").getElementsByClassName("game-name left");
-    var players = document.getElementById("top-games").querySelectorAll(".num:not(.period-col)");
-      for (var i=0; i<title.length && i<players.length; i++)
-      list[i] = [title[i].innerText, players[i].innerHTML];
+	var list = [];
+	var name = document.getElementById("top-games").getElementsByClassName("game-name left");
+	var number = document.getElementById("top-games").querySelectorAll(".num:not(.period-col)");
+//	var waitTime = PONER AQUÍ; 
+	for (var i=0; i<name.length && i<number.length; i++)
+      		list[i] = [name[i].innerText, number[i].innerHTML];
 
-//Creates a csv by iterating through list variable.
+//Creates a csv file by iterating through list array.
 	let rows = [];
-		for (var i=0; i<list.length; i++)
-			rows.push(list[i]);
+		for (var n=0; n<list.length; n++)
+			rows.push(list[n]);
 	let csvContent = "data:text/csv;charset=utf-8,";
 rows.forEach(function(rowArray){
    let row = rowArray.join(";");
